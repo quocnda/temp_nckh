@@ -185,7 +185,7 @@ class TPOTTrainer(BaseTrainer):
     def train(self, training_info: TrainingInfo):
         """Huấn luyện TPOT trên dữ liệu đã xử lý."""
         try:
-            user_dataset_path = '/home/quoc/works/Learn/NCKH/org-detection-text-classification'
+            user_dataset_path = '/home/quoc/works/Learn/NCKH/loan-approval-tabular-classification'
             user_model_path = '/home/quoc/works/Learn/NCKH/model'
 
             # os.makedirs(user_dataset_path, exist_ok=True)
@@ -304,13 +304,13 @@ if __name__ == "__main__":
     print('Start train--->')
     trainer.train(
         TrainingInfo(
-            task="IMAGE_CLASSIFICATION",
+            task="TABULAR_CLASSIFICATION",
             task_id="1",
             framework="TPOT",
-            training_time=60*60,
+            training_time=60,
             presets="medium_quality",
             text_column="org",
-            label_column="label",
+            label_column="loan_status",
             image_column="image",
         )
     )
